@@ -1,0 +1,16 @@
+<package>
+  <description brief="dpslam_logger">
+
+     dpslam_logger
+
+  </description>
+  <author>Kim Phung Nguyen</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dpslam_logger</url>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>	
+
+</package>
+
+
