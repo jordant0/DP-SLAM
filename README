@@ -12,7 +12,9 @@ Requirements
 	
 Running the program:
 
-	To run the program ,first record data in the scan and odom topics into a bag file
+	To run the program ,first launch the segway base and the hokuyo laser. This can be done using segbot_bringup
+		$ roslaunch segbot_bringup segbot_hokuyo.launch
+	After that, record data in the scan and odom topics while the robot is driving into a bag file
 		$ rosbag record -O dpslam.bag /scan /odom
 	The logger can then be read data from the topics then writes them out to a file in the required format
 		$ rosrun dpslam_logger dpslam.bag
