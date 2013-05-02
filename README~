@@ -1,0 +1,19 @@
+DP-SLAM
+Emily Tarrant and Kim Tran
+
+
+Requirements
+	- rosbag
+	- rosrecord
+	- laser scan data
+	- odometry data
+	- a computer with decent processing power and memory
+	- ImageMagick may be needed to convert files
+	
+Logger:
+
+
+To run the program ,first record data in the scan and odom topics into a bag file
+	$ rosbag record scan odom
+
+The logger can then be read data from the topics then writes them out to a file in the required format

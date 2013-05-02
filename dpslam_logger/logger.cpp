@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	player.open(files, ros::Time());
 	player.addHandler<robot_msgs::PoseStamped>(string("odom"), &odom_callback, NULL);
 	player.addHandler<laser_scan::LaserScan>(string("scan"), &scan_callback, NULL);
-	clog = fopen("dpslam.log", "w");
+	clog = fopen("scan_data.log", "w");
 	while(player.nextMsg()) { }
 	fclose(clog);
 	return 0;

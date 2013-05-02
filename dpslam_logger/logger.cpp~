@@ -26,8 +26,8 @@ void scan_callback(string name, laser_scan::LaserScan* scan, ros::Time t, ros::T
 	fprintf(clog, "Laser 1000 ");
 	for (uint32_t i = 0; i < scan->get_ranges_size(); i++)
 		fprintf(clog, "%.3f ", scan->ranges[scan->get_ranges_size() - i - 1]);
-		fprintf(clog, "\n");
-	}
+	fprintf(clog, "\n");
+}
 
 int main(int argc, char **argv)
 {

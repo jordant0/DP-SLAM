@@ -1,0 +1,33 @@
+DP-SLAM
+Emily Tarrant and Kim Tran
+
+
+Requirements
+	- rosbag
+	- rosrecord
+	- laser scan data
+	- odometry data
+	- a computer with decent processing power and memory
+	- ImageMagick may be needed to convert files
+	
+Running the program:
+
+	To run the program ,first record data in the scan and odom topics into a bag file
+		$ rosbag record -O dpslam.bag /scan /odom
+	The logger can then be read data from the topics then writes them out to a file in the required format
+		$ rosrun dpslam_logger dpslam.bag
+	The produced log file can then be copied and run in the dpslam folder
+		$ cd ../dpslam
+		$ make
+		$ ./slam -p scan_data.log
+
+Common relevant variables:
+	- dpslam_logger/logger.cpp: Change argument 'scan_data.log' to desired log name
+	- dpslam/map.h:	PARTICLE_NUMBER: Change the number of particles used for the low level process
+			H_PARTICLE_NUMBER: Change the number of particles used for the high level process
+			MAP_WIDTH and MAP_HEIGHT: Change the dimension of the output low maps
+			H_MAP_WIDTH and H_MAP_HEIGHT: Change the dimension of the output high maps
+	- dpslam/basic.h: Change the number of grid squares per meter in the map resolution. Typically 20-35 (3-5cm 				  per grid square)
+	- dpslam/low.h: Change the number of low level iterations performed before each high level iteration
+
+
